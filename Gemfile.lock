@@ -65,7 +65,7 @@ GEM
     autoprefixer-rails (10.2.4.0)
       execjs
     bindex (0.8.1)
-    bootsnap (1.7.2)
+    bootsnap (1.7.3)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -210,7 +210,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.4.4)
+  bootsnap (~> 1.7, >= 1.7.3)
   bootstrap-sass (~> 3.4, >= 3.4.1)
   byebug
   capybara (>= 3.26)
