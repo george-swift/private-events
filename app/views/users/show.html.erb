@@ -9,12 +9,12 @@
   <div class="row">
     <% @user.events.each do |event| %>
       <div class="panel panel-default col-6">
-        <div class="panel-heading"><h3 class="text-primary"><%= event.title %></h3></div>
+        <div class="panel-heading"><h3 class="text-primary"><%= event.name %></h3></div>
         <div class="author panel-body">
-          <h4> <%= event.body %><br> </h4>
+          <h4> <%= event.description %><br> </h4>
         </div>
         <div class="panel-footer">
-          <h6 class="text-muted"><%= author(event) %>&nbsp;&bull;&nbsp;<%= event.created_at %></h6>
+          <h6 class="text-muted"><%= event.date %>&nbsp &bull &nbsp<%= creator(event) %>&nbsp;&nbsp &bull &nbsp<%= event.created_at %></h6>
         </div>
       </div>
     <% end %>
