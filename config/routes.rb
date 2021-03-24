@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  root 'users#new'
+  get 'events/index'
+  get 'events/new'
+  get 'events/show'
+  root 'events#index'
   get 'users/new'
   post 'users/new', to: 'users#create'
   get 'users/show'
   get 'sessions/new'
   post 'sessions/new', to: 'sessions#create'
+
 
   resources :users
   resources :sessions
