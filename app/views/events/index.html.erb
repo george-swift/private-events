@@ -15,7 +15,9 @@
             &bull;&nbsp;Date: &nbsp;<%= event.date.to_formatted_s(:long_ordinal) %><br>
             &bull;&nbsp;Created by: &nbsp;<%= event.creator.name %>
           </p>
-          <%= link_to 'See more', event_path(event), class: "btn btn-info" %>
+          <% if logged_in? %>
+            <%= link_to 'Register', event_path(event), class: "btn btn-success" %>
+          <% end %>
         </div>
       </div>
     </div>

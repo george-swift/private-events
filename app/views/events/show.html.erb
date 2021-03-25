@@ -1,6 +1,23 @@
 
 <h1><%= @event.name %></h1>
-<h2><%= @event.creator.name %></h2>
+<h2>Event Creator:&nbsp;<%= @event.creator.name %></h2>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h4 class="text-primary"><%= @event.name %></h4></div>
+  <div class="panel-body">
+    <p> <%= @event.description %></p>
+  </div>
+  <div class="panel-footer">
+    <p class="details text-muted">
+      &bull;&nbsp;Date of event: <%= @event.date.to_formatted_s(:long_ordinal) %><br>
+      &bull;&nbsp;Event created at: <%= @event.created_at.to_formatted_s(:short) %>
+    </p>
+    <% if @event.creator == current_user %>
+      <%= link_to 'Invite', '#', class: 'btn btn-warning' %>
+    <% end %>
+  </div>
+</div>
+  
 
   <div class="container">
     <div class="row">
