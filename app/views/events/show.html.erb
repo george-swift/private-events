@@ -1,2 +1,16 @@
-<h1><%= @event.creator.name %></h1>
-<h2><%= @event.name %>
+
+<h1><%= @event.name %></h1>
+<h2><%= @event.creator.name %></h2>
+
+  <div class="container">
+    <div class="row">
+      <% @event.registrations.all.each do |attendee| %>
+        <div class="col-sm-6">
+          <div class="card">
+            <span>Attendee: </span>
+            <div class="card-header"><h4 class="card-title"><%= User.find(attendee.user_id).name %></h4><br></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
