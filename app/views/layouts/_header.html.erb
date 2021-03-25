@@ -12,15 +12,15 @@
           </button>
         </div>
         <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <li><%= link_to 'Popular Events', events_index_path %></li>
+          <li><%= link_to 'Popular Events', events_path %></li>
 				  <li><%= link_to 'About', '#' %></li>
 				
-					<li><%= link_to 'My Profile',  current_user %></li>
-					<li><%= link_to 'Create Event',  events_new_path %></li>
+					<li><%= link_to 'My Events',  current_user %></li>
+					<li><%= link_to 'Create Event',  new_event_path %></li>
 					<li><%= link_to 'Logout',  '#' %></li>
 				
-					<li><%= link_to 'Sign In',  sessions_new_path %></li>
-					<li><%= link_to 'Join',  users_new_path %></li>
+					<li><%= link_to 'Sign In',  login_path %></li>
+					<li><%= link_to 'Join',  signup_path %></li>
         </ul>
       </nav>
     </div>
