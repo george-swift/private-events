@@ -5,6 +5,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@mixin box_sizing {
+  box-sizing: border-box;
+}
+
 body {
   padding-top: 60px;
 }
@@ -42,7 +46,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -69,4 +73,18 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+input,
+textarea,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+
+  @include box_sizing;
+}
+
+.details {
+  font-size: 1em;
 }
