@@ -1,20 +1,21 @@
 <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<h3>Welcome</h3> <br>
-<%= @user.name %>
-<h4>Events:</h4><br>
-<%= @user.events.count %>
+<h2>List of events you created</h2>
+<h3>Welcome, <%= @user.name %></h3> <br>
+<h4>Total events: <%= @user.events.count %></h4>
 
 <div class="container">
   <div class="row">
     <% @user.events.each do |event| %>
-      <div class="panel panel-default col-6">
-        <div class="panel-heading"><h3 class="text-primary"><%= event.name %></h3></div>
-        <div class="author panel-body">
-          <h4> <%= event.description %><br> </h4>
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4 class="text-primary"><%= event.name %></h4></div>
+        <div class="panel-body">
+          <p> <%= event.description %></p>
         </div>
         <div class="panel-footer">
-          <h6 class="text-muted"><%= event.date %>&nbsp &bull &nbsp<%= creator(event) %>&nbsp;&nbsp &bull &nbsp<%= event.created_at %></h6>
+          <p class="details text-muted">
+            &bull;&nbsp;Date of event: <%= event.date.to_formatted_s(:long_ordinal) %><br>
+            &bull;&nbsp;Event created at: <%= event.created_at.to_formatted_s(:short) %>
+          </p>
         </div>
       </div>
     <% end %>
