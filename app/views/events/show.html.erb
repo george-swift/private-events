@@ -1,6 +1,6 @@
 
 <h1><%= @event.name %></h1>
-<h2>Event Creator:&nbsp;<%= @event.creator.name %></h2>
+<h2>Event Creator:&nbsp;<%= @creator.name %></h2>
 
 <div class="panel panel-default">
   <div class="panel-heading"><h4 class="text-primary"><%= @event.name %></h4></div>
@@ -21,23 +21,23 @@
 
   <div class="container">
     <div class="row">
-        <div class="col-sm-3">
-          <div class="card">
-                <table class="table">
-                  <thead>
-                  <tr>
-                    <th scope="col">List of Attendees</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <% @event.attendees.each do |attendee| %>
-                    <tr>
-                      <td><%= User.find(attendee.id).name %></td>
-                    </tr>
-                  <% end %>
-                  </tbody>
-                </table>
-          </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">List of Attendees</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @event.attendees.each do |attendee| %>
+              <tr>
+                <td><%= User.find(attendee.id).name %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
         </div>
 
     </div>
