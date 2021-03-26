@@ -4,6 +4,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    print "param from ev.show:"
+    puts params
     @event = Event.find(params[:id])
   end
 
