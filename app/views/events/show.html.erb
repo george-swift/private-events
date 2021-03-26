@@ -21,13 +21,25 @@
 
   <div class="container">
     <div class="row">
-      <% @event.registrations.all.each do |attendee| %>
-        <div class="col-sm-6">
+        <div class="col-sm-3">
           <div class="card">
-            <span>Attendee: </span>
-            <div class="card-header"><h4 class="card-title"><%= User.find(attendee.user_id).name %></h4><br></div>
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th scope="col">List of Attendees</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% @event.attendees.each do |attendee| %>
+                    <tr>
+                      <td><%= User.find(attendee.id).name %></td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                </table>
           </div>
         </div>
-      <% end %>
+
     </div>
   </div>
+
