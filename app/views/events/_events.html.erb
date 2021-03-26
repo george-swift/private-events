@@ -10,7 +10,7 @@
         &bull;&nbsp;Created by: &nbsp;<%= event.creator.name %>
       </p>
       <% if logged_in? %>
-        <%= link_to 'Register', registrations_path(:event_id => event.id, :invited_users => [current_user.id]), 
+        <%= link_to 'Register', registrations_path(:event_id => event.id, :guests_list => [current_user.id]),
         class: "btn btn-success #{disable(current_user, event.id)}", method: :post %>
       <% end %>
     </div>
