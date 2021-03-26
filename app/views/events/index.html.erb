@@ -16,7 +16,9 @@
             &bull;&nbsp;Created by: &nbsp;<%= event.creator.name %>
           </p>
           <% if logged_in? %>
-            <%= link_to 'Register', event_path(event), class: "btn btn-success" %>
+            <% invited_users = [current_user.id, 8, 9, 10] %>
+            <%= link_to 'Register', registrations_path(:event_id => event.id, :invited_users => invited_users), class: "btn btn-success", method: 'POST' %>
+
           <% end %>
         </div>
       </div>
