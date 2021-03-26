@@ -15,12 +15,21 @@
             &bull;&nbsp;Event created at: <%= @event.created_at.to_formatted_s(:short) %>
           </p>
           <% if @event.creator == current_user %>
-            <%= link_to 'Invite', '#', class: 'btn btn-warning' %>
+            <%= link_to 'Invite users to this event', event_path( :id => @event.id, :users_list => true), class: 'btn btn-warning' %>
           <% end %>
         </div>
       </div>
+
+      <% if params.has_key?(:users_list) %>
+        <%= render 'guest_list' %>
+      <% end %>
+
     </div>
-    
+
+
+
+
+
     <div class="col-md-6">
       <div class="wrap">
         <table class="table">

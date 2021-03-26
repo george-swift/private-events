@@ -3,7 +3,7 @@ class RegistrationsController < ApplicationController
   def create
 
     event = Event.find(params[:event_id])
-    users_invited = params[:invited_users]
+    users_invited = params[:guests_list].compact
     errors = []
 
     users_invited.each do |attendee|
