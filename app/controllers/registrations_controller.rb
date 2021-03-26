@@ -7,16 +7,11 @@ class RegistrationsController < ApplicationController
     errors = []
 
     users_invited.each do |attendee|
-
       registered = Registration.new(event_id: event.id, user_id: attendee)
+      errors << attendee unless registered.save
+    end
 
-      if registered.save
-      else
-        errors << attendee
-      end
-      end
-
-    if errors.size > 0
+    if errors.size.positive?
       flash.now[:danger] = 'This erorr will never pop up'
     else
       flash.now[:success] = 'All users have been invited'
