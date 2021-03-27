@@ -1,8 +1,9 @@
-<div>Guests list</div>
+<div class="guests wrap">
+    <h2>Guests list</h2>
+    <%= form_with url: registrations_path do |f| %>
+    <%= hidden_field_tag(:event_id, @event.id) %>
+    <%= f.collection_check_boxes :guests_list, users_list(@event.id, current_user), :id, :name %>
+    <%= f.submit 'Send Invitations', class:'btn btn-success' %>
+    <% end %>
+</div>
 
-
-<%= form_with url: registrations_path do |f| %>
-  <%= hidden_field_tag(:event_id, @event.id) %>
-  <%= f.collection_check_boxes :guests_list, users_list(@event.id, current_user), :id, :name %>
-  <%= f.submit %>
-<% end %>

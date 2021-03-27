@@ -98,3 +98,25 @@ textarea,
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
+
+.guests {
+  padding: 10px;
+  margin-bottom: 10px;
+
+  form {
+    text-align: center;
+  }
+
+  label {
+    width: 50%;
+  }
+
+  input[type=checkbox] {
+    width: 50%;
+    float: right;
+  }
+
+  input[type=submit] {
+    margin-top: 10px;
+  }
+}
