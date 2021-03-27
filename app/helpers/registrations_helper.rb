@@ -4,6 +4,6 @@ module RegistrationsHelper
   end
 
   def disable(user, id)
-    'disabled' if not_registered?(user, id)
+    'disabled' if Event.find(id).date < Time.now || not_registered?(user, id)
   end
 end

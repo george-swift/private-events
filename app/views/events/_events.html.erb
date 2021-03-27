@@ -4,14 +4,13 @@
       <h4 class="card-title"><%= link_to event.name, event_path(event) %></h4>
     </div>
     <div class="card-body">
-      <p class="card-text"><%= event.description.truncate_words(12) %></p>
+      <p class="card-text"><%= truncate(event.description) %></p>
       <p class="details text-muted">
-        &bull;&nbsp;Date: &nbsp;<%= event.date.to_formatted_s(:long_ordinal) %><br>
+        &bull;&nbsp;Date: &nbsp;<%= long_format(event.date) %><br>
         &bull;&nbsp;Created by: &nbsp;<%= event.creator.name %>
       </p>
       <% if logged_in? %>
-        <%= link_to 'Register', registrations_path(:event_id => event.id, :guests_list => [current_user.id]),
-        class: "btn btn-success #{disable(current_user, event.id)}", method: :post %>
+        <%= link_to 'Register', query(event), class: "btn btn-success #{disable(current_user, event.id)}", method: :post %>
       <% end %>
     </div>
   </div>

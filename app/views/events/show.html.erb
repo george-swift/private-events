@@ -5,45 +5,38 @@
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default wrap">
-        <div class="panel-heading"><h4 class="text-primary"><%= @event.name %></h4></div>
+        <div class="panel-heading">
+          <h4 class="text-primary">Date: <%= long_format(@event.date) %></h4>
+        </div>
         <div class="panel-body">
           <p> <%= @event.description %></p>
         </div>
         <div class="panel-footer">
           <p class="details text-muted">
-            &bull;&nbsp;Date of event: <%= @event.date.to_formatted_s(:long_ordinal) %><br>
-            &bull;&nbsp;Event created at: <%= @event.created_at.to_formatted_s(:short) %>
+            &bull;&nbsp;Event created at: <%= short_format(@event.created_at) %>
           </p>
-          <% if @event.creator == current_user %>
-            <%= link_to 'Invite users to this event', event_path( :id => @event.id, :users_list => true), class: 'btn btn-warning' %>
+          <% if logged_in? && upcoming?(@event) %>
+            <%= link_to 'Invite others to this event', options(@event), class: 'btn btn-warning' %>
           <% end %>
         </div>
       </div>
-
-      <% if params.has_key?(:users_list) %>
-        <%= render 'guest_list' %>
-      <% end %>
-
+      <%= register(:users_list) %>
     </div>
-
-
-
-
 
     <div class="col-md-6">
       <div class="wrap">
         <table class="table">
           <thead>
-          <tr>
-            <th scope="col">List of Attendees</th>
-          </tr>
+            <tr>
+              <th scope="col">List of Attendees</th>
+            </tr>
           </thead>
           <tbody>
-          <% @event.attendees.each do |attendee| %>
-            <tr>
-              <td><%= User.find(attendee.id).name %></td>
-            </tr>
-          <% end %>
+            <% @event.attendees.each do |attendee| %>
+              <tr>
+                <td><%= search_for(attendee) %></td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
       </div>

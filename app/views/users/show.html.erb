@@ -2,8 +2,9 @@
 <h2>Here are all your events</h2>
 
 <div class="container">
+  <%= link_to 'Host a new event', new_event_path %><br>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h4>Created: <%= @user.events.count %></h4>
       <% @user.events.each do |event| %>
       <div class="wrap panel panel-default">
@@ -13,30 +14,27 @@
         </div>
         <div class="panel-footer">
           <p class="details text-muted">
-            &bull;&nbsp;Date of event: <%= event.date.to_formatted_s(:long_ordinal) %><br>
-            &bull;&nbsp;Event created at: <%= event.created_at.to_formatted_s(:short) %>
+            &bull;&nbsp;Date of event: <%= long_format(event.date) %><br>
+            &bull;&nbsp;Event created at: <%= short_format(event.created_at) %>
           </p>
-          <%= link_to 'Select attendees for this event', users_path, class: "btn btn-success" %>
+          <%= link_to 'See attendees for this event', event_path(@info.next), class: "btn btn-success" %>
         </div>
       </div>
     <% end %>
-    <%= link_to 'Host a new event', new_event_path %><br><br>
     </div>
-    <div class="col-md-6">
-      <h4>Attending: <%= @user.attended_events.count %></h4>
-      <% @user.attended_events.each do |event| %>
-      <div class="wrap panel panel-default">
-        <div class="panel-heading"><h4 class="text-primary"><%= event.name %></h4></div>
-        <div class="panel-body">
-          <p> <%= event.description %></p>
-        </div>
-        <div class="panel-footer">
-          <p class="details text-muted">
-            &bull;&nbsp;Date of event: <%= event.date.to_formatted_s(:long_ordinal) %>
-          </p>
-        </div>
-      </div>
-    <% end %>
+
+    <div class="col-md-4">
+      <h4>Upcoming events: <%= upcoming_events(@user).count %></h4>
+      <% upcoming_events(@user).each do |event| %>
+        <%= render 'panel', event: event %>
+      <% end %>
+    </div>
+
+    <div class="col-md-4">
+      <h4>Previously attended events: <%= past_events(@user).count %></h4>
+      <% past_events(@user).each do |event| %>
+        <%= render 'panel', event: event %>
+      <% end %>
     </div>
   </div>
 </div>
