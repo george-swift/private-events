@@ -9,14 +9,13 @@ To put in practice the main concepts of Associations in rails through an app sim
 
 ## Features
 
-> The front end ( `http://localhost:3000/` ) displays the list of all events, categorized by upcoming and past ones
-> Only signed-in users can register to events
-> The nav bar lets user [Join](#), [Sign In](#), look ar the the [Popular Events](#) and [Logout](#), and when Signed in the user can see the [Create Event](#) and [My Events](#) options
-> Every signed-in user can invite other users to an event
-> Only upcoming events show the option to invite users
-> After an event was successfully created, the user gets redirected to the event's show page
-> In the event's show page the user can see the list of all the attendees
->
+> The front end ( `http://localhost:3000/` ) displays the list of all events, categorized by upcoming and past ones.
+> Only signed-in users can register to events.
+> The nav bar lets user [Join](#), [Sign In](#), look at the [Popular Events](#) and [Logout](#), and when Signed in the user can see the [Create Event](#) and [My Events](#) options.
+> Every signed-in user can invite other users to an event.
+> Only upcoming events show the option to invite users.
+> After an event was successfully created, the user gets redirected to the event's show page.
+> In the event's show page the user can see the list of all the attendees.
 
 ## Prerequisites
 - Ruby
@@ -39,7 +38,8 @@ To put in practice the main concepts of Associations in rails through an app sim
 
 
 ## Testing & Troubleshooting
-- If the user runs the server and gets any `webpacker` related errors, then add the following dependency to `config/webpack/environment.js`:
+- Run rails test to run all the tests
+- If the user runs the server and gets any `webpacker` related errors, check if the following dependency is in `config/webpack/environment.js`. Add it otherwise and run the server again:
 
 ```
   const webpack = require('webpack')
