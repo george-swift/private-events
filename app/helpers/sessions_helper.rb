@@ -16,4 +16,3 @@ module SessionsHelper
     @current_user = nil
   end
 end
-

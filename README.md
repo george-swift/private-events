@@ -16,7 +16,7 @@ To put in practice the main concepts of Associations in rails through an app sim
 > Only upcoming events show the option to invite users
 > After an event was successfully created, the user gets redirected to the event's show page
 > In the event's show page the user can see the list of all the attendees
-> 
+>
 
 ## Prerequisites
 - Ruby
@@ -36,6 +36,22 @@ To put in practice the main concepts of Associations in rails through an app sim
 - Visit `http://localhost:3000/` to get into the app in your browser
 - The user can interact with the blog using the link in the nav bar. To sign up, they can use the `Become a member` link
 - To terminate the server, enter `Ctrl + C` in your terminal
+
+
+## Testing & Troubleshooting
+- If the user runs the server and gets any `webpacker` related errors, then add the following dependency to `config/webpack/environment.js`:
+
+```
+  const webpack = require('webpack')
+  environment.plugins.append(
+  'Provide',
+  new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery',
+  Popper: ['popper.js', 'default']
+  })
+  )
+  ```
 
 ## Authors
 
