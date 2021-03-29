@@ -9,6 +9,9 @@
 # Ignore bundler config.
 /.bundle
 
+# node_modules folder
+node_modules/
+
 #Igonre .idea folder
 /.idea
 

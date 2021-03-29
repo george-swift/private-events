@@ -31,6 +31,8 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 #gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootsnap', '~> 1.7', '>= 1.7.3', require: false
 
+gem 'rubocop', '~>0.81.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
