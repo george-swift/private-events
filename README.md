@@ -11,7 +11,7 @@ To put in practice the main concepts of Associations in rails through an app sim
 
 > The front end ( `http://localhost:3000/` ) displays the list of all events, categorized by upcoming and past ones.
 > Only signed-in users can register to events.
-> The nav bar lets user [Join](#), [Sign In](#), look at the [Popular Events](#) and [Logout](#), and when Signed in the user can see the [Create Event](#) and [My Events](#) options.
+> The nav bar lets user `Join`, `Sign In`, look at the `Popular Events` and `Logout`, and when Signed in the user can see the links to `Create Event` and `My Events`.
 > Every signed-in user can invite other users to an event.
 > Only upcoming events show the option to invite users.
 > After an event was successfully created, the user gets redirected to the event's show page.
@@ -33,7 +33,7 @@ To put in practice the main concepts of Associations in rails through an app sim
 - Run migrations to get the databases using: `rails db:migrate`
 - Execute `rails s` to fire up the server
 - Visit `http://localhost:3000/` to get into the app in your browser
-- The user can interact with the blog using the link in the nav bar. To sign up, they can use the `Become a member` link
+- The user can interact with the app using the links in the nav bar. To sign up, click the `Join` link
 - To terminate the server, enter `Ctrl + C` in your terminal
 
 
