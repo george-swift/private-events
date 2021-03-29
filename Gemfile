@@ -31,6 +31,9 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 # gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootsnap', '~> 1.7', '>= 1.7.3', require: false
 
+# Gem for testing
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+
 gem 'rubocop', '~>0.81.0'
 
 group :development, :test do
@@ -55,6 +58,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'minitest', '~> 5.14', '>= 5.14.4'
+  gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
+  gem 'guard', '~> 2.16', '>= 2.16.2'
+  gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name])
     if user
       log_in user
+      flash[:success] = 'Log in successful!'
       redirect_to user
-      flash.now[:success] = 'Log in successful!'
     else
       flash.now[:danger] = 'Invalid name'
       render :new

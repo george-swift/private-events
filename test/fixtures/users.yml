@@ -1,9 +1,4 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  new: MyString
-  show: MyString
-
-two:
-  new: MyString
-  show: MyString
+tucu:
+  name: Tucu
