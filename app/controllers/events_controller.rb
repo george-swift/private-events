@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :logged_in_user, except: [:index, :show]
+
   def index
     @events = Event.all
   end
@@ -27,5 +29,11 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:user_id, :name, :description, :date)
+  end
+
+  def logged_in_user
+    store_location unless logged_in?
+    flash[:danger] = 'Please log in to access this page' unless logged_in?
+    redirect_to login_url unless logged_in?
   end
 end
