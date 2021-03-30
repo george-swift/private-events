@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :logged_in_user, except: [:index, :show]
+  before_action :logged_in_user, except: %i[index show]
 
   def index
     @events = Event.all

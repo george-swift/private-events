@@ -30,7 +30,7 @@ To put in practice the main concepts of Associations in rails through an app sim
 - Run this command in your OS terminal: `git clone git@github.com:george-swift/private-events.git` to get a copy of the project.
 - Navigate to the project's directory using the `cd` command
 - Migrate the database to your environment using: `rails db:migrate`
-- Run `rails webpacker:install` to configure Webpacker for your environment. Otherwise, an error like so `Webpacker::Manifest::MissingEntryError` will appear if you attempt to run the server.
+- Run `raº` to configure Webpacker for your environment. Otherwise, an error like so `Webpacker::Manifest::MissingEntryError` will appear if you attempt to run the server.
 - The Rails asset pipeline works in parallel with Webpack and Yarn, and you need both jQuery and Bootstrap’s JavaScript library installed for the app to work. To begin execute `yarn add jquery@3.4.1 bootstrap@3.4.1`.
 - Next, to make jQuery available in your application, you need to edit Webpack’s environment file. Navigate to `config/webpack/environment.js` and include the following snippet below the first line:
 ```
