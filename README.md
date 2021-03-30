@@ -62,6 +62,7 @@ To put in practice the main concepts of Associations in rails through an app sim
 👤 &nbsp; **Ubong George**
 - GitHub: [@george-swift](https://github.com/george-swift)
 - Twitter: [@\_\_pragmaticdev](https://twitter.com/__pragmaticdev)
+- LinkedIn: [Ubong George](https://www.linkedin.com/in/ubong-itok)
 
 ## Acknowledgments
 
