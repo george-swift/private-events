@@ -1,0 +1,23 @@
+<h1>All Events</h1>
+<h2>Displays all private events sorted by time</h2>
+
+<div class="container wrap category">
+  <h3>Upcoming Events</h3>
+  <div class="row">
+  <% @events.upcoming.each do |event| %>
+    <%= render 'events', event: event %>
+  <% end %>
+  </div>
+</div>
+
+<div class="container wrap category">
+<h3>Past Events</h3>
+  <div class="row">
+  <% @events.previous.each do |event| %>
+    <%= render 'events', event: event %>
+  <% end %>
+  </div>
+</div>
+
+
+
