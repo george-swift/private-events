@@ -1,0 +1,11 @@
+<div class="wrap panel panel-default">
+  <div class="panel-heading"><h4 class="text-primary"><%= event.name %></h4></div>
+  <div class="panel-body">
+    <p> <%= event.description %></p>
+  </div>
+  <div class="panel-footer">
+    <p class="details text-muted">
+      &bull;&nbsp;Date of event: <%= long_format(event.date) %>
+    </p>
+  </div>
+</div>
